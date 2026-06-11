@@ -1,21 +1,30 @@
 #include <stdio.h>
 
-void checkEvenOdd(int n)
+int isPrime(int n)
 {
-    if(n % 2 == 0)
-        printf("Even Number");
-    else
-        printf("Odd Number");
+    if(n <= 1)
+        return 0;
+
+    for(int i = 2; i <= n / 2; i++)
+    {
+        if(n % i == 0)
+            return 0;
+    }
+
+    return 1;
 }
 
 int main()
 {
-    int n;
+    int num;
 
     printf("Enter a number: ");
-    scanf("%d", &n);
+    scanf("%d", &num);
 
-    checkEvenOdd(n);
+    if(isPrime(num))
+        printf("%d is a Prime Number", num);
+    else
+        printf("%d is not a Prime Number", num);
 
     return 0;
 }
