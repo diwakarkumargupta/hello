@@ -22,4 +22,4 @@ int main()
     printf("Factorial of %d = %ld", num, factorial(num));
 
     return 0;
-}
+ }
